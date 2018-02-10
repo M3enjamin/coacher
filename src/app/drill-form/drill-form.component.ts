@@ -17,10 +17,11 @@ export class DrillFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      title: '',
+      name: '',
       description: '',
       aspect: '',
-      nbPlayers: ''
+      minPlayers: '',
+      maxPlayers: ''
     });
   }
 

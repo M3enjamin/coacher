@@ -1,11 +1,11 @@
 <ul>
-  <div *ngFor="let drill of drillsObservable | async">
+  <div *ngFor="let drill of drills">
     <h3>
-      <a href="#">{{drill.title}}</a>
+      <a href="#">{{drill.name}}</a>
     </h3>
     <p>{{drill.description}}</p>
     <div>
-      <a href="{{drill.url}}" target="_blank" class="btn btn-danger">Go To Drill</a>
+      <a href="#" class="btn btn-danger"(click)="remove(drill)">Delete</a>
     </div>
   </div>
 </ul>

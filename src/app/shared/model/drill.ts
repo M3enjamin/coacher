@@ -1,4 +1,5 @@
 export interface Drill {
-  title: string;
+  id: string;
+  name: string;
   description: string;
 }

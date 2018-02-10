@@ -12,6 +12,7 @@ import { environment } from './../environments/environment';
 import { AppComponent } from './app.component';
 import { DrillsListComponent } from './drills-list/drills-list.component';
 import { DrillFormComponent } from './drill-form/drill-form.component';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [AppComponent, DrillsListComponent, DrillFormComponent],
@@ -23,6 +24,7 @@ import { DrillFormComponent } from './drill-form/drill-form.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     SharedModule
   ],
   providers: [],
