@@ -1,3 +1,7 @@
+import { ActivityModule } from './activity/activity.module';
+import { SessionsModule } from './sessions/sessions.module';
+import { AppRoutingModule } from './app-routing.module';
+import { DrillsModule } from './drills/drills.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -9,25 +13,27 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SharedModule } from './shared/shared.module';
 import { environment } from './../environments/environment';
 
-import { AppComponent } from './app.component';
-import { DrillsListComponent } from './drills-list/drills-list.component';
-import { DrillFormComponent } from './drill-form/drill-form.component';
+import { AppContainer } from './app.container';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { CoreModule } from '@app/core/core.module';
 
 @NgModule({
-  declarations: [AppComponent, DrillsListComponent, DrillFormComponent],
+  declarations: [AppContainer],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    SharedModule
+    CoreModule,
+    SharedModule,
+    AppRoutingModule,
+    DrillsModule,
+    SessionsModule,
+    ActivityModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppContainer]
 })
 export class AppModule {}

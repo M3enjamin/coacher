@@ -1,0 +1,14 @@
+<div class="tab-content">
+  <router-outlet></router-outlet>
+</div>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link [routerLink]="'/sessions'" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+    SESSIONS
+  </a>
+  <a mat-tab-link [routerLink]="'/drills'" routerLinkActive #rlb="routerLinkActive" [active]="rlb.isActive">
+    DRILLS
+  </a>
+  <a mat-tab-link [routerLink]="'/activity'" routerLinkActive #rlc="routerLinkActive" [active]="rlc.isActive">
+    ACTIVITY
+  </a>
+</nav>
