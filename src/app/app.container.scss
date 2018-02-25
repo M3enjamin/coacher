@@ -1,17 +1,24 @@
+.content {
+  flex: 1 100%;
+}
+
 nav {
-    width: 100%;
-}
+  flex: 0 0 60px;
 
-.mat-tab-label[role^='tab'] {
+  display: flex;
+
+  a {
     flex-grow: 1;
-    background-color: #FFF;
+  }
 }
 
-.mat-tab-body-wrapper {
-    flex-grow: 1;
-    padding: 5px;
-}
+header {
+  flex: 0 0 50px;
+  display:flex;
 
-mat-card {
-    margin-top: 10px;
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+  }
 }

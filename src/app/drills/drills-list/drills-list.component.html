@@ -1,14 +1,15 @@
 <mat-card *ngFor="let drill of drills">
-  <mat-card-header>
+  <!-- <mat-card-header>
     <div mat-card-avatar class="header-image"></div>
     <mat-card-title>{{drill.name}}</mat-card-title>
     <mat-card-subtitle>{{drill.description}}</mat-card-subtitle>
-  </mat-card-header>
+  </mat-card-header> -->
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
-    <p>desc.: {{drill.description}}</p>
-    <p>min: {{drill.minPlayers}}</p>
-    <p>max: {{drill.maxPlayers}}</p>
+    <span>{{drill.name}}</span>
+    <!-- <span>desc.: {{drill.description}}</span> -->
+    <!-- <span>min: {{drill.minPlayers}}</span>
+    <span>max: {{drill.maxPlayers}}</span> -->
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="remove(drill)">Delete</button>
