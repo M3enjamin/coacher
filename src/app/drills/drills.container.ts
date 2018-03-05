@@ -11,8 +11,13 @@ import { map } from 'rxjs/operators/map';
 @Component({
   selector: 'app-drills',
   template: `
-  <app-drill-form [formOpen]="showNewDrillForm | async" (createDrill)="createDrill($event)" (cancelCreate)="cancelCreate()"></app-drill-form>
-  <app-drills-list [drills]="drills | async"></app-drills-list>
+  <app-drill-form
+    [formOpen]="showNewDrillForm | async"
+    (createDrill)="createDrill($event)"
+    (cancelCreate)="cancelCreate()"></app-drill-form>
+  <app-drills-list
+    [drills]="drills | async"
+    (removeDrill)="removeDrill($event)"></app-drills-list>
   `
 })
 export class DrillsContainer {
