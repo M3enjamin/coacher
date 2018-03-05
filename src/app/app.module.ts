@@ -16,11 +16,14 @@ import { environment } from './../environments/environment';
 import { AppContainer } from './app.container';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { CoreModule } from '@app/core/core.module';
+import { StoreModule } from '@ngrx/store';
+import { layoutReducer } from '@app/store/layout.reducer';
 
 @NgModule({
   declarations: [AppContainer],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({ layout: layoutReducer }),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

@@ -10,10 +10,12 @@ import { Drill, Aspect } from '@shared/model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DrillFormComponent implements OnInit {
+  @Input() formOpen: boolean;
+
   @Output() createDrill = new EventEmitter<Drill>();
+  @Output() cancelCreate = new EventEmitter<any>();
 
   form: FormGroup;
-  formOpen = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -26,7 +28,11 @@ export class DrillFormComponent implements OnInit {
 
   submit() {
     this.createDrill.emit(this.form.value);
-    this.formOpen = false;
+    this.form.reset();
+  }
+
+  cancel() {
+    this.cancelCreate.emit();
     this.form.reset();
   }
 }

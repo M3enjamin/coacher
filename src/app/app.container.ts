@@ -1,7 +1,10 @@
+import { OPEN_NEW_DRILL_FORM, CLOSE_NEW_DRILL_FORM } from './store/layout.reducer';
+import { AppState } from './store/app.state';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Drill, Aspect } from './shared/model';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +18,7 @@ export class AppContainer {
   drills: Observable<Drill[]>;
   aspects: Observable<Aspect[]>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private store: Store<AppState>) {
     this.drillCollection = afs.collection<Drill>('drills');
     this.aspectCollection = afs.collection<Aspect>('aspects');
     this.drills = this.drillCollection.snapshotChanges().map(actions => {
@@ -34,11 +37,7 @@ export class AppContainer {
     });
   }
 
-  createDrill(drill: Drill) {
-    this.drillCollection.add(drill);
-  }
-
-  removeDrill(drill: Drill) {
-    this.afs.doc('drills/' + drill.id).delete();
+  openNewDrillForm() {
+    this.store.dispatch({ type: OPEN_NEW_DRILL_FORM });
   }
 }
