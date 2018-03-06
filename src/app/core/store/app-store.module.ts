@@ -5,7 +5,7 @@ import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { metaReducers, reducers } from './app.reducer';
 
 // import AppStoreModule in the AppModule after router module

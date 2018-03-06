@@ -1,11 +1,6 @@
+import { LayoutState } from './layout.state';
 import { Action } from '@ngrx/store';
-
-export const OPEN_NEW_DRILL_FORM = 'OPEN NEW DRILL FORM';
-export const CLOSE_NEW_DRILL_FORM = 'CLOSE NEW DRILL FORM';
-
-export interface LayoutState {
-  showNewDrillForm: boolean;
-}
+import { OPEN_NEW_DRILL_FORM, CLOSE_NEW_DRILL_FORM } from './layout.actions';
 
 const DEFAULT_STATE: LayoutState = {
   showNewDrillForm: false

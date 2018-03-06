@@ -1,4 +1,3 @@
-import { AppStoreModule } from './store/app-store.module';
 import { ActivityModule } from './activity/activity.module';
 import { SessionsModule } from './sessions/sessions.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,10 +28,9 @@ import { StoreModule } from '@ngrx/store';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AppRoutingModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule,
-    AppStoreModule,
     DrillsModule,
     SessionsModule,
     ActivityModule

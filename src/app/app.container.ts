@@ -1,4 +1,4 @@
-import { StoreService } from '@app/store/app-store.service';
+import { StoreService } from '@core/store/app-store.service';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Drill, Aspect } from './shared/model';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';

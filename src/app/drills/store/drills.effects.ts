@@ -1,4 +1,4 @@
-import { AppState } from './../../store/app.reducer';
+import { AppState } from '@core/store/app.reducer';
 import { DrillsService } from './../drills.service';
 import {
   LoadDrills,

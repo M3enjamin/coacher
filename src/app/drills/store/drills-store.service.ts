@@ -4,8 +4,8 @@ import { createFeatureSelector, createSelector, Store } from '@ngrx/store';
 import * as state from './drills.state';
 import * as drills from './drills.actions';
 
-import { StoreService } from '@app/store/app-store.service';
-import { AppState } from '@app/store/app.reducer';
+import { StoreService } from '@core/store/app-store.service';
+import { AppState } from '@core/store/app.reducer';
 import { Observable } from 'rxjs/Observable';
 import { filter } from 'rxjs/operators/filter';
 import { map } from 'rxjs/operators/map';

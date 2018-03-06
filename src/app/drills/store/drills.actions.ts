@@ -1,4 +1,4 @@
-import { NgRxAction } from '@app/store/ngrx-action';
+import { NgRxAction } from '@core/store/ngrx-action';
 import { Drill } from '@shared/model';
 import { Action } from '@ngrx/store';
 
