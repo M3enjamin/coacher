@@ -1,6 +1,7 @@
-import { DrillsContainer } from './drills/drills.container';
+import { DrillsContainer } from './drills/drills/drills.container';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/drills', pathMatch: 'full' },
@@ -19,7 +20,12 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router'
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

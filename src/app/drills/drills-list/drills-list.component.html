@@ -6,12 +6,12 @@
   </mat-card-header> -->
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
-    <span>{{drill.name}}</span>
+    <a [routerLink]="drill.id">{{drill.name}}</a>
     <!-- <span>desc.: {{drill.description}}</span> -->
     <!-- <span>min: {{drill.minPlayers}}</span>
     <span>max: {{drill.maxPlayers}}</span> -->
   </mat-card-content>
-  <mat-card-actions>
+  <!-- <mat-card-actions>
     <button mat-button (click)="remove(drill)">Delete</button>
-  </mat-card-actions>
+  </mat-card-actions> -->
 </mat-card>

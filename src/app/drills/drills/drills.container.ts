@@ -1,5 +1,4 @@
-import { CLOSE_NEW_DRILL_FORM } from './../store/layout.reducer';
-import { AppState } from './../store/app.state';
+import { DrillsStoreService } from './../store/drills-store.service';
 import { Component, OnInit } from '@angular/core';
 import { Drill, Aspect } from '@app/shared/model';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
@@ -7,6 +6,7 @@ import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/fires
 import { Observable } from 'rxjs/Observable';
 import { Store, select } from '@ngrx/store';
 import { map } from 'rxjs/operators/map';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drills',
@@ -27,7 +27,7 @@ export class DrillsContainer {
   aspects: Observable<Aspect[]>;
   showNewDrillForm: Observable<boolean>;
 
-  constructor(private afs: AngularFirestore, private store: Store<AppState>) {
+  constructor(private afs: AngularFirestore, private drillStoreService: DrillsStoreService, private router: Router) {
     this.drillCollection = afs.collection<Drill>('drills');
     this.aspectCollection = afs.collection<Aspect>('aspects');
     this.drills = this.drillCollection.snapshotChanges().map(actions => {
@@ -44,24 +44,25 @@ export class DrillsContainer {
         return { id, ...data };
       });
     });
-    this.showNewDrillForm = this.store.pipe(
-      select('layout'),
-      map(appState => {
-        return appState['layout']['showNewDrillForm'];
-      })
-    );
+    // this.showNewDrillForm = this.store.pipe(
+    //   select('layout'),
+    //   map(appState => {
+    //     return appState['layout']['showNewDrillForm'];
+    //   })
+    // );
   }
 
   createDrill(drill: Drill) {
     this.drillCollection.add(drill);
-    this.store.dispatch({ type: CLOSE_NEW_DRILL_FORM });
+    this.drillStoreService.dispatchCreateDrillAction(drill);
   }
 
   cancelCreate() {
-    this.store.dispatch({ type: CLOSE_NEW_DRILL_FORM });
+    // this.store.dispatch({ type: CLOSE_NEW_DRILL_FORM });
   }
 
   removeDrill(drill: Drill) {
-    this.afs.doc('drills/' + drill.id).delete();
+    // this.afs.doc('drills/' + drill.id).delete();
+    this.drillStoreService.dispatchDeleteDrillAction(drill);
   }
 }

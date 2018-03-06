@@ -1,3 +1,4 @@
+import { AppStoreModule } from './store/app-store.module';
 import { ActivityModule } from './activity/activity.module';
 import { SessionsModule } from './sessions/sessions.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { routerReducer } from '@ngrx/router-store';
 
 import { SharedModule } from './shared/shared.module';
 import { environment } from './../environments/environment';
@@ -17,13 +19,11 @@ import { AppContainer } from './app.container';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { CoreModule } from '@app/core/core.module';
 import { StoreModule } from '@ngrx/store';
-import { layoutReducer } from '@app/store/layout.reducer';
 
 @NgModule({
   declarations: [AppContainer],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ layout: layoutReducer }),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -32,6 +32,7 @@ import { layoutReducer } from '@app/store/layout.reducer';
     CoreModule,
     SharedModule,
     AppRoutingModule,
+    AppStoreModule,
     DrillsModule,
     SessionsModule,
     ActivityModule
