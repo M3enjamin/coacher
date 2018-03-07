@@ -28,7 +28,7 @@ export class LayoutStoreService extends StoreService {
     this.dispatchAction(new layout.CloseNewDrillForm());
   }
 
-  getNewDrillFormState() {
-    this.store.select(this.newDrillFormState);
+  getNewDrillFormState(): Observable<boolean> {
+    return this.store.select(this.newDrillFormState);
   }
 }

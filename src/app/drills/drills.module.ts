@@ -1,3 +1,5 @@
+import { DrillsService } from './drills.service';
+import { DrillsStoreService } from './store/drills-store.service';
 import { DrillsRoutingModule } from './drills-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +11,7 @@ import { DrillsContainer } from './drills/drills.container';
 
 @NgModule({
   imports: [CommonModule, SharedModule, DrillsRoutingModule],
-  declarations: [DrillsListComponent, DrillFormComponent, DrillDetailsContainer, DrillsContainer]
+  declarations: [DrillsListComponent, DrillFormComponent, DrillDetailsContainer, DrillsContainer],
+  providers: [DrillsStoreService, DrillsService]
 })
 export class DrillsModule {}

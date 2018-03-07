@@ -9,10 +9,10 @@ const DEFAULT_STATE: LayoutState = {
 export function layoutReducer(state: LayoutState = DEFAULT_STATE, action: Action) {
   switch (action.type) {
     case OPEN_NEW_DRILL_FORM:
-      return { ...state, layout: { showNewDrillForm: true } };
+      return { ...state, showNewDrillForm: true };
 
     case CLOSE_NEW_DRILL_FORM:
-      return { ...state, layout: { showNewDrillForm: false } };
+      return { ...state, showNewDrillForm: false };
 
     default:
       return state;

@@ -1,3 +1,4 @@
+import { LayoutStoreService } from './../../core/store/layout/layout-store.service';
 import { DrillsStoreService } from './../store/drills-store.service';
 import { Component, OnInit } from '@angular/core';
 import { Drill, Aspect } from '@app/shared/model';
@@ -27,7 +28,12 @@ export class DrillsContainer {
   aspects: Observable<Aspect[]>;
   showNewDrillForm: Observable<boolean>;
 
-  constructor(private afs: AngularFirestore, private drillStoreService: DrillsStoreService, private router: Router) {
+  constructor(
+    private afs: AngularFirestore,
+    private router: Router,
+    private drillStoreService: DrillsStoreService,
+    private layoutStoreService: LayoutStoreService
+  ) {
     this.drillCollection = afs.collection<Drill>('drills');
     this.aspectCollection = afs.collection<Aspect>('aspects');
     this.drills = this.drillCollection.snapshotChanges().map(actions => {
@@ -44,12 +50,7 @@ export class DrillsContainer {
         return { id, ...data };
       });
     });
-    // this.showNewDrillForm = this.store.pipe(
-    //   select('layout'),
-    //   map(appState => {
-    //     return appState['layout']['showNewDrillForm'];
-    //   })
-    // );
+    this.showNewDrillForm = this.layoutStoreService.getNewDrillFormState();
   }
 
   createDrill(drill: Drill) {
@@ -58,7 +59,7 @@ export class DrillsContainer {
   }
 
   cancelCreate() {
-    // this.store.dispatch({ type: CLOSE_NEW_DRILL_FORM });
+    this.layoutStoreService.dispatchCloseNewDrillForm();
   }
 
   removeDrill(drill: Drill) {

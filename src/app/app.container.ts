@@ -1,4 +1,5 @@
-import { StoreService } from '@core/store/app-store.service';
+import { LayoutStoreService } from '@core/store/layout/layout-store.service';
+import { LayoutState } from './core/store/layout/layout.state';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Drill, Aspect } from './shared/model';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -17,7 +18,7 @@ export class AppContainer {
   drills: Observable<Drill[]>;
   aspects: Observable<Aspect[]>;
 
-  constructor(private afs: AngularFirestore, private storeService: StoreService) {
+  constructor(private afs: AngularFirestore, private layoutStoreService: LayoutStoreService) {
     this.drillCollection = afs.collection<Drill>('drills');
     this.aspectCollection = afs.collection<Aspect>('aspects');
     this.drills = this.drillCollection.snapshotChanges().map(actions => {
@@ -37,6 +38,6 @@ export class AppContainer {
   }
 
   openNewDrillForm() {
-    // this.storeService.dispatchOpenNewDrillForm();
+    this.layoutStoreService.dispatchOpenNewDrillForm();
   }
 }
