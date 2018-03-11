@@ -21,10 +21,10 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DrillsModule,
     CoreModule,
     SharedModule,
     SessionsModule,
+    DrillsModule,
     ActivityModule
   ],
   providers: [],

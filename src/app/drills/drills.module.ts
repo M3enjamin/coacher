@@ -18,12 +18,18 @@ import { AngularFireModule } from 'angularfire2';
   imports: [
     CommonModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     DrillsRoutingModule,
     DrillsStoreModule
   ],
-  declarations: [DrillsListComponent, DrillFormComponent, DrillDetailsContainer, DrillsContainer],
-  providers: [DrillsStoreService, DrillsService]
+  declarations: [
+    DrillsListComponent,
+    DrillFormComponent,
+    DrillDetailsContainer,
+    DrillsContainer
+  ],
+  providers: [
+    DrillsStoreService,
+    DrillsService
+  ]
 })
-export class DrillsModule {}
+export class DrillsModule { }
