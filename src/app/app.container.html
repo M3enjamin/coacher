@@ -6,7 +6,7 @@
 <div class="content">
   <router-outlet></router-outlet>
 </div>
-<nav>
+<nav id="navigationMenu">
   <a [routerLink]="'/sessions'" routerLinkActive #rla="routerLinkActive" [class.active]="rla.isActive">
     SESSIONS
   </a>
