@@ -2,6 +2,7 @@ import { AppState } from '@core/store/app.reducer';
 import { DrillsService } from './../drills.service';
 import {
   LoadDrills,
+  LoadDrillsSuccess,
   LOAD_DRILLS,
   CreateDrill,
   CREATE_DRILL,
@@ -28,7 +29,13 @@ import { switchMap } from 'rxjs/operators/switchMap';
 
 @Injectable()
 export class DrillsEffects {
-  @Effect() loadDrills$: Observable<Action> = this.actions$.ofType<LoadDrills>(LOAD_DRILLS).pipe(switchMap(payload => undefined));
+  @Effect()
+  loadDrills$: Observable<Action> = this.actions$
+    .ofType<LoadDrills>(LOAD_DRILLS)
+    .pipe(switchMap(payload => this.drillsService.loadDrills().pipe(
+      map(drills => {
+        return new LoadDrillsSuccess(drills)
+      }))));
 
   @Effect()
   createDrill$: Observable<Action> = this.actions$

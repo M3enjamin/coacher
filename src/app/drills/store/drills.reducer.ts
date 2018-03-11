@@ -14,7 +14,9 @@ import cloneDeep from 'lodash-es/cloneDeep';
 export function reducer(state = initialState, action: DrillsActions): DrillsState {
   switch (action.type) {
     case LOAD_DRILLS_SUCCESS: {
-      return cloneDeep(state);
+      const newState = cloneDeep(state);
+      newState.list = action.payload;
+      return newState;
     }
 
     case CREATE_DRILL_SUCCESS: {

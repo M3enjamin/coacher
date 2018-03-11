@@ -37,6 +37,10 @@ export class DrillsStoreService extends StoreService {
     this.dispatchAction(new drills.DeleteDrill(drill));
   }
 
+  getDrills(): Observable<Drill[]> {
+    return this.store.select(this.drills);
+  }
+
   getDrillDetails(): Observable<Drill> {
     return this.store.select(this.drill);
   }

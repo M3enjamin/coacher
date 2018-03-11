@@ -1,3 +1,4 @@
+import { getDrills } from './../store/drills.state';
 import { LayoutStoreService } from './../../core/store/layout/layout-store.service';
 import { DrillsStoreService } from './../store/drills-store.service';
 import { Component, OnInit } from '@angular/core';
@@ -22,39 +23,16 @@ import { Router } from '@angular/router';
   `
 })
 export class DrillsContainer {
-  private drillCollection: AngularFirestoreCollection<Drill>;
-  private aspectCollection: AngularFirestoreCollection<Aspect>;
   drills: Observable<Drill[]>;
-  aspects: Observable<Aspect[]>;
   showNewDrillForm: Observable<boolean>;
 
-  constructor(
-    private afs: AngularFirestore,
-    private router: Router,
-    private drillStoreService: DrillsStoreService,
-    private layoutStoreService: LayoutStoreService
-  ) {
-    this.drillCollection = afs.collection<Drill>('drills');
-    this.aspectCollection = afs.collection<Aspect>('aspects');
-    this.drills = this.drillCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Drill;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      });
-    });
-    this.aspects = this.aspectCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Aspect;
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      });
-    });
+  constructor(private router: Router, private drillStoreService: DrillsStoreService, private layoutStoreService: LayoutStoreService) {
+    this.drillStoreService.dispatchLoadDrillsAction();
+    this.drills = this.drillStoreService.getDrills();
     this.showNewDrillForm = this.layoutStoreService.getNewDrillFormState();
   }
 
   createDrill(drill: Drill) {
-    this.drillCollection.add(drill);
     this.drillStoreService.dispatchCreateDrillAction(drill);
   }
 
@@ -63,7 +41,6 @@ export class DrillsContainer {
   }
 
   removeDrill(drill: Drill) {
-    // this.afs.doc('drills/' + drill.id).delete();
     this.drillStoreService.dispatchDeleteDrillAction(drill);
   }
 }

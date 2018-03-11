@@ -10,4 +10,4 @@ import { reducer } from '@app/drills/store/drills.reducer';
   exports: [StoreModule, EffectsModule],
   providers: [DrillsStoreService]
 })
-export class DemandsStoreModule {}
+export class DrillsStoreModule {}
