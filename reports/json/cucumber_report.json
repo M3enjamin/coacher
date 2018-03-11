@@ -1,0 +1,50 @@
+[
+  {
+    "description": "  As a user\n  I want to have a menu always visible\n  So that I can navigate to other sections from anywhere in the app",
+    "keyword": "Feature",
+    "name": "Navigation",
+    "line": 1,
+    "id": "navigation",
+    "tags": [],
+    "uri": "e2e\\features\\navigation.feature",
+    "elements": [
+      {
+        "id": "navigation;menu-should-be-visible-on-the-sessions-page",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Menu should be visible on the sessions page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on the sessions page",
+            "match": {
+              "location": "Documents\\workspace\\coacher\\node_modules\\cucumber\\src\\support_code_library_builder\\define_helpers.js:90"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2583000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I can see the navigation menu",
+            "match": {
+              "location": "Documents\\workspace\\coacher\\node_modules\\cucumber\\src\\support_code_library_builder\\define_helpers.js:90"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5008000000,
+              "error_message": "Error: function timed out after 5000 milliseconds\n    at Timeout._onTimeout (D:\\Ben\\Mes Documents\\workspace\\coacher\\node_modules\\cucumber\\src\\user_code_runner.js:61:18)\n    at ontimeout (timers.js:458:11)\n    at tryOnTimeout (timers.js:296:5)\n    at Timer.listOnTimeout (timers.js:259:5)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

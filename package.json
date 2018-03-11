@@ -8,7 +8,13 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "bundle-report": "ng build -prod --stats-json & webpack-bundle-analyzer build/stats.json -m static",
+    "webdriver:clean": "webdriver-manager clean",
+    "webdriver:update": "webdriver-manager update --chrome --ie --gecko",
+    "webdriver:start": "webdriver-manager start --detach",
+    "webdriver:stop": "webdriver-manager shutdown",
+    "e2e": "protractor protractor.conf.js",
+    "e2e:hub": "protractor protractor.hub.conf.js"
   },
   "private": true,
   "dependencies": {
@@ -41,10 +47,20 @@
     "@angular/cli": "1.6.0",
     "@angular/compiler-cli": "^5.2.2",
     "@angular/language-service": "^5.2.2",
+    "@types/chai": "^4.1.2",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/cucumber": "^4.0.1",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-smoothie": "^0.3.2",
     "codelyzer": "^4.0.1",
+    "cucumber": "^4.0.0",
+    "cucumber-html-report": "^0.6.4",
+    "cucumber-html-reporter": "^4.0.1",
+    "cucumberjs-allure-reporter": "^1.0.3",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -53,9 +69,11 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.2",
+    "protractor": "^5.3.0",
+    "protractor-cucumber-framework": "^4.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "yargs": "^11.0.0"
   }
 }
