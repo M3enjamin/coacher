@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DrillsModule } from './drills/drills.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routerReducer } from '@ngrx/router-store';
 
@@ -30,4 +30,20 @@ import { StoreModule } from '@ngrx/store';
   providers: [],
   bootstrap: [AppContainer]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(applicationRef: ApplicationRef) {
+    const originalTick = applicationRef.tick;
+
+    applicationRef.tick = function () {
+      const before = performance.now();
+
+      const retVal = originalTick.apply(this, arguments);
+
+      const after = performance.now();
+
+      console.log('CHANGE DETECTION: ', after - before);
+
+      return retVal;
+    }
+  }
+}
