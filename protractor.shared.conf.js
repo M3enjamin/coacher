@@ -14,7 +14,7 @@ exports.config = {
     strict: true, // <boolean> fail if there are any undefined or pending steps
     format: 'json:./reports/json/cucumber_report.json',
     dryRun: false, // <boolean> invoke every formatter without executing steps
-    tags: [], // <string[]> (expression) only execute the features or scenarios with tags matching the expression
+    tags: ["~@ignore"], // <string[]> (expression) only execute the features or scenarios with tags matching the expression
   },
   onPrepare: function () {
     require('ts-node').register({
@@ -32,7 +32,7 @@ exports.config = {
     Reporter.createHTMLReport();
   },
   allScriptsTimeout: 60000,
-  disableChecks: false,
+  disableChecks: true,
   useAllAngular2AppRoots: true
 };
 
