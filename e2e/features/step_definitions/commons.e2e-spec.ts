@@ -13,7 +13,6 @@ const pages = {
 Given(/^I am on the (.*) page$/, (page: string, done: any) => {
     browser.get('/' + pages[page].path).then(() => {
         console.log('GOING TO : ', page);
-        browser.debugger();
         done();
     });
 });

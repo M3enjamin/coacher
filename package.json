@@ -14,7 +14,7 @@
     "webdriver:start": "webdriver-manager start --detach",
     "webdriver:stop": "webdriver-manager shutdown",
     "e2e": "protractor protractor.conf.js",
-    "e2e:hub": "protractor inspect protractor.hub.conf.js"
+    "e2e:hub": "protractor protractor.hub.conf.js"
   },
   "private": true,
   "dependencies": {
