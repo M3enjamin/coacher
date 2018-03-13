@@ -5,16 +5,18 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "lint": "ng lint",
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint",
+    "test:once": "ng test --watch=false",
     "bundle-report": "ng build -prod --stats-json & webpack-bundle-analyzer build/stats.json -m static",
     "webdriver:clean": "webdriver-manager clean",
     "webdriver:update": "webdriver-manager update --chrome --ie --gecko",
     "webdriver:start": "webdriver-manager start --detach",
     "webdriver:stop": "webdriver-manager shutdown",
     "e2e": "protractor protractor.conf.js",
-    "e2e:hub": "protractor protractor.hub.conf.js"
+    "e2e:hub": "protractor protractor.hub.conf.js",
+    "ci": "yarn lint && yarn e2e"
   },
   "private": true,
   "dependencies": {

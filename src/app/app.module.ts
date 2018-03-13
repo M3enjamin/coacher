@@ -44,6 +44,6 @@ export class AppModule {
       console.log('CHANGE DETECTION: ', after - before);
 
       return retVal;
-    }
+    };
   }
 }
