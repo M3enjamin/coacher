@@ -2,20 +2,28 @@ import { Aspect } from './../shared/model/aspect';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { Drill } from './../shared/model/drill';
-import { Injectable } from '@angular/core';
+import { Injectable, Injector, NgZone } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DrillsService {
   private drillCollection: AngularFirestoreCollection<Drill>;
-  private drills: Observable<Drill[]>;
+  private drills: Subject<Drill[]> = new Subject<Drill[]>();
 
-  constructor(private afs: AngularFirestore) {
-    this.drillCollection = afs.collection<Drill>('drills');
-    this.drills = this.drillCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Drill;
-        const id = a.payload.doc.id;
-        return { id, ...data };
+  constructor(private injector: Injector, private ngZone: NgZone) {
+    ngZone.runOutsideAngular(() => {
+      this.drillCollection = injector.get(AngularFirestore).collection<Drill>('drills');
+      this.drillCollection.snapshotChanges().subscribe(actions => {
+        this.ngZone.run(() => {
+          this.drills.next(
+            actions.map(a => {
+              const data = a.payload.doc.data() as Drill;
+              const id = a.payload.doc.id;
+              return { id, ...data };
+            })
+          );
+        });
       });
     });
   }
@@ -28,9 +36,11 @@ export class DrillsService {
     return undefined;
   }
   deleteDrill(drill: Drill): Observable<any> {
-    this.afs.doc('drills/' + drill.id).delete();
+    //   this.afs.doc('drills/' + drill.id).delete();
+    //   return undefined;
     return undefined;
   }
+
   openDrill(drillId: string): Observable<Drill> {
     return undefined;
   }

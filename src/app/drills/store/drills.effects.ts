@@ -34,7 +34,7 @@ export class DrillsEffects {
     .ofType<LoadDrills>(LOAD_DRILLS)
     .pipe(switchMap(payload => this.drillsService.loadDrills().pipe(
       map(drills => {
-        return new LoadDrillsSuccess(drills)
+        return new LoadDrillsSuccess(drills);
       }))));
 
   @Effect()

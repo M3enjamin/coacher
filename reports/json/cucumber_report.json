@@ -22,11 +22,11 @@
             "line": 7,
             "name": "I am on the sessions page",
             "match": {
-              "location": "Documents\\workspace\\coacher\\node_modules\\cucumber\\src\\support_code_library_builder\\define_helpers.js:90"
+              "location": "e2e\\features\\step_definitions\\commons.e2e-spec.ts:13"
             },
             "result": {
               "status": "passed",
-              "duration": 3075000000
+              "duration": 1831000000
             }
           },
           {
@@ -35,11 +35,11 @@
             "line": 8,
             "name": "I can see the navigation menu",
             "match": {
-              "location": "Documents\\workspace\\coacher\\node_modules\\cucumber\\src\\support_code_library_builder\\define_helpers.js:90"
+              "location": "e2e\\features\\step_definitions\\navigation.e2e-spec.ts:18"
             },
             "result": {
               "status": "passed",
-              "duration": 43000000
+              "duration": 60000000
             }
           }
         ]

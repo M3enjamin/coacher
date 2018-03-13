@@ -16,7 +16,6 @@ const { Given, When, Then } = require('cucumber');
 
 
 Then(/^I can see the navigation menu$/, (done: any) => {
-  browser.waitForAngularEnabled(false);
   expect(basePage.navigationMenu.isDisplayed()).to.eventually.be.true.and.notify(done);
 });
 
