@@ -22,7 +22,6 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - yarn start
   - yarn webdriver:update
   - yarn e2e
 
