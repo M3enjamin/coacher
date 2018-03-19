@@ -15,37 +15,26 @@ branches:
   only:
     - master
 
-
-
-# after_success:
-#   - firebase deploy --token "$FIREBASE_TOKEN"
-
-
-# notifications:
-#   email:
-#     on_failure: change
-#     on_success: change
-
 jobs:
   include:
     - stage: compile
       before_script:
-       - yarn global add firebase-tools
-       - yarn global add @angular/cli
+        - yarn global add firebase-tools
+        - yarn global add @angular/cli
       script:
-       - yarn build
-   - stage: deploy
+        - yarn build
+    - stage: deploy
       deploy:
-       provider: firebase
-       token:
-        secure: "VcxcvK6T6DKljcuArYRurdovcaPwWIludQQAW2ls9A+yqIe3yMPqh1VQnJAdlvw3JMkmwuAP7Y1c5z0bb+uukeLPteq7BbLyZdd0RF+5j1pFVoQeAK7kpcT4/5aQNQ74YuykRYTHGikzonBT5e3X3lbJ4XTAixZftNNLFiVAaTJVWpbQGskerUWfgtz4sKKaZSF/1vYEtSRUrKUwnhX/nNHmsFHq9jssx6WvfaUXAAdqjF/hu5K37g+WKkM9lWO9Y9ZQOd6ZIfO1+lFRNI0SauacNygnMYiulRi1/822M2ws/H+w3FS7axzX8EgCDTSyCKpvCG3f0sMrE946LY3DXB52/u+edSpLDM14MkOnaokdRIhS1j6ayaBE9bu9bnCFnu1Rl3x5tIdoCpEobKfgjjMloov02fp4MQS5uv7IRcHjEr35zFThs5i1mHFvCd7SxCx1PNktxQY3W5+wMgzR1+tktkQQZ+XadcJKs25uBr2mNWsFFNHbavKqYVMQ+1WuD350E+PovumddND4nx57cgTYPwEEw05eKJYO0ns7MaJOABvOO3c0KA92eyhCFOpiI9ZZEaKXqObIP3q1SpcslCXnO4zBP6o3UJNM9Ir4amxSS/BDb2/PLdzn7zPMeoAfI4g5k4WpTQab7y08WlShQCSc10UbuL5hSwzpicpCu4s="
-       skip_cleanup: true
+      provider: firebase
+      token:
+      secure: "VcxcvK6T6DKljcuArYRurdovcaPwWIludQQAW2ls9A+yqIe3yMPqh1VQnJAdlvw3JMkmwuAP7Y1c5z0bb+uukeLPteq7BbLyZdd0RF+5j1pFVoQeAK7kpcT4/5aQNQ74YuykRYTHGikzonBT5e3X3lbJ4XTAixZftNNLFiVAaTJVWpbQGskerUWfgtz4sKKaZSF/1vYEtSRUrKUwnhX/nNHmsFHq9jssx6WvfaUXAAdqjF/hu5K37g+WKkM9lWO9Y9ZQOd6ZIfO1+lFRNI0SauacNygnMYiulRi1/822M2ws/H+w3FS7axzX8EgCDTSyCKpvCG3f0sMrE946LY3DXB52/u+edSpLDM14MkOnaokdRIhS1j6ayaBE9bu9bnCFnu1Rl3x5tIdoCpEobKfgjjMloov02fp4MQS5uv7IRcHjEr35zFThs5i1mHFvCd7SxCx1PNktxQY3W5+wMgzR1+tktkQQZ+XadcJKs25uBr2mNWsFFNHbavKqYVMQ+1WuD350E+PovumddND4nx57cgTYPwEEw05eKJYO0ns7MaJOABvOO3c0KA92eyhCFOpiI9ZZEaKXqObIP3q1SpcslCXnO4zBP6o3UJNM9Ir4amxSS/BDb2/PLdzn7zPMeoAfI4g5k4WpTQab7y08WlShQCSc10UbuL5hSwzpicpCu4s="
+      skip_cleanup: true
     - stage: e2e test
       before_script:
-       - yarn global add firebase-tools
-       - yarn global add @angular/cli
-       - export DISPLAY=:99.0
-       - sh -e /etc/init.d/xvfb start
+        - yarn global add firebase-tools
+        - yarn global add @angular/cli
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       script:
-       - yarn webdriver:update
-       - yarn e2e
+        - yarn webdriver:update
+        - yarn e2e
