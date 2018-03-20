@@ -9,5 +9,5 @@ Feature: Navigation
 
   Scenario: Menu should be visible on the sessions page
     Given I am on the sessions page
-    When I click/tap on the "drills" menu
+    When I click on the drills menu
     Then I should be on the drills screen
