@@ -1,24 +1,17 @@
-"use strict";
-const {
-  browser,
-  by,
-  element
-} = require("protractor");
-const {
-  BeforeAll,
-  After,
-  Status,
-  setDefaultTimeout
-} = require("cucumber");
+'use strict';
+const { browser, by, element } = require('protractor');
+const { BeforeAll, After, Status, setDefaultTimeout } = require('cucumber');
 
 /**
  * Go the angular starter page before to start each test
  */
-BeforeAll({timeout: 30 * 1000}, function (callback) {
-setDefaultTimeout(20 * 1000);
-// browser.get('http://localhost:8090').then(() => {
-callback();
-// });
+BeforeAll({ timeout: 30 * 1000 }, function(callback) {
+  defineSupportCode( ({ setDefaultTimeout }) => {
+    setDefaultTimeout(60 * 1000);
+  });
+  // browser.get('http://localhost:8090').then(() => {
+  callback();
+  // });
 });
 
 /**
