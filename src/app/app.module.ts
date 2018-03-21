@@ -30,20 +30,4 @@ import { StoreModule } from '@ngrx/store';
   providers: [],
   bootstrap: [AppContainer]
 })
-export class AppModule {
-  constructor(applicationRef: ApplicationRef) {
-    const originalTick = applicationRef.tick;
-
-    applicationRef.tick = function () {
-      const before = performance.now();
-
-      const retVal = originalTick.apply(this, arguments);
-
-      const after = performance.now();
-
-      console.log('CHANGE DETECTION: ', after - before);
-
-      return retVal;
-    };
-  }
-}
+export class AppModule {}
