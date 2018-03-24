@@ -5,13 +5,8 @@ const { BeforeAll, After, Status, setDefaultTimeout } = require('cucumber');
 /**
  * Go the angular starter page before to start each test
  */
-BeforeAll({ timeout: 30 * 1000 }, function(callback) {
-  defineSupportCode( ({ setDefaultTimeout }) => {
-    setDefaultTimeout(60 * 1000);
-  });
-  // browser.get('http://localhost:8090').then(() => {
-  callback();
-  // });
+BeforeAll({timeout: 10 * 1000}, async () => {
+  await browser.get(config.baseUrl);
 });
 
 /**
