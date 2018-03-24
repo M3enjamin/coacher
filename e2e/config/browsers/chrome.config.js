@@ -6,7 +6,7 @@ function chromeConfig() {
     return {
         browserName: 'chrome',
         chromeOptions: {
-            args: ['disable-infobars'],
+            args: ['disable-infobars', '--headless', '--disable-gpu', '--window-size=800x600'],
             prefs: {
                 'credentials_enable_service': false,
                 'profile': {
