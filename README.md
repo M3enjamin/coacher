@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/M3enjamin/coacher.svg?branch=master)](https://travis-ci.org/M3enjamin/coacher)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cf0814f886ca4c40ab6648e2cf966b09)](https://app.codacy.com/app/M3enjamin/coacher?utm_source=github.com&utm_medium=referral&utm_content=M3enjamin/coacher&utm_campaign=badger)
+[![Greenkeeper badge](https://badges.greenkeeper.io/M3enjamin/coacher.svg)](https://greenkeeper.io/)
 
 # Coacher
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/M3enjamin/coacher.svg)](https://greenkeeper.io/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
