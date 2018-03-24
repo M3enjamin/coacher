@@ -23,8 +23,8 @@ exports.config = {
     // browser.manage().window().maximize();
 
     // implicit and page load timeouts
-    browser.manage().timeouts().pageLoadTimeout(40000);
-    browser.manage().timeouts().implicitlyWait(25000);
+    browser.manage().timeouts().pageLoadTimeout(60000);
+    browser.manage().timeouts().implicitlyWait(60000);
 
     Reporter.createDirectory(jsonReports);
   },

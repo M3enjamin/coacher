@@ -1,7 +1,6 @@
-import { browser } from 'protractor';
-import { BasePage } from '../../pages/base.po';
-import { SessionsPage } from '../../pages/sessions.po';
-import { DrillsPage } from '../../pages/drills.po';
+import {browser} from 'protractor';
+import {SessionsPage} from '../../pages/sessions.po';
+import {DrillsPage} from '../../pages/drills.po';
 import * as chai from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 

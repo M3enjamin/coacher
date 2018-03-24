@@ -1,6 +1,4 @@
-import { DrillsPage } from './../../pages/drills.po';
-import { BasePage } from '../../pages/base.po';
-import { element, by, browser } from 'protractor';
+import {BasePage} from '../../pages/base.po';
 import * as chai from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 
