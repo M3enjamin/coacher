@@ -3,6 +3,13 @@ import { AppContainer } from './app.container';
 import { RouterModule } from '@angular/router';
 import { LayoutStoreService } from '@app/core/store/layout/layout-store.service';
 import { RouterTestingModule } from '@angular/router/testing';
+
+class MockLayoutStoreService {
+  dispatchOpenNewDrillForm() {
+    console.log('dispatchOpenNewDrillForm');
+  }
+}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,10 +31,3 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 });
-
-
-class MockLayoutStoreService {
-  dispatchOpenNewDrillForm() {
-    console.log('dispatchOpenNewDrillForm');
-  }
-}

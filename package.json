@@ -44,7 +44,7 @@
     "mdi": "^2.1.99",
     "ngrx-store-freeze": "^0.2.1",
     "rxjs": "^5.5.7",
-    "zone.js": "^0.8.20"
+    "zone.js": "git://github.com/JiaLiPassion/zone.js#jasmine-dist"
   },
   "devDependencies": {
     "@angular/cli": "1.7.3",
