@@ -17,22 +17,21 @@
     "e2e": "protractor protractor.conf.js",
     "e2e:hub": "protractor protractor.hub.conf.js",
     "ci": "yarn lint && ng e2e",
-    "test-with-coverage":
-      "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage"
+    "test-with-coverage": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.2",
+    "@angular/animations": "5.2.9",
     "@angular/cdk": "^5.1.0",
-    "@angular/common": "^5.2.2",
-    "@angular/compiler": "^5.2.2",
-    "@angular/core": "^5.2.2",
-    "@angular/forms": "^5.2.2",
-    "@angular/http": "^5.2.2",
+    "@angular/common": "5.2.9",
+    "@angular/compiler": "5.2.9",
+    "@angular/core": "5.2.9",
+    "@angular/forms": "5.2.9",
+    "@angular/http": "5.2.9",
     "@angular/material": "^5.1.0",
-    "@angular/platform-browser": "^5.2.2",
-    "@angular/platform-browser-dynamic": "^5.2.2",
-    "@angular/router": "^5.2.2",
+    "@angular/platform-browser": "5.2.9",
+    "@angular/platform-browser-dynamic": "5.2.9",
+    "@angular/router": "5.2.9",
     "@ngrx/effects": "^5.1.0",
     "@ngrx/router-store": "^5.0.1",
     "@ngrx/store": "^5.1.0",
@@ -44,13 +43,13 @@
     "lodash-es": "^4.17.5",
     "mdi": "^2.1.99",
     "ngrx-store-freeze": "^0.2.1",
-    "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "rxjs": "^5.5.7",
+    "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "~1.7.3",
-    "@angular/compiler-cli": "^5.2.2",
-    "@angular/language-service": "^5.2.2",
+    "@angular/cli": "1.7.3",
+    "@angular/compiler-cli": "5.2.9",
+    "@angular/language-service": "5.2.9",
     "@types/chai": "^4.1.2",
     "@types/chai-as-promised": "^7.1.0",
     "@types/cucumber": "^4.0.1",
@@ -77,7 +76,7 @@
     "protractor-cucumber-framework": "^4.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
+    "typescript": "2.6.2",
     "yargs": "^11.0.0"
   }
 }
