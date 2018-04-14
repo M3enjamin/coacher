@@ -57,3 +57,6 @@ workflows:
       - build:
           requires:
             - test
+      - deploy-dev:
+          requires:
+            - build
