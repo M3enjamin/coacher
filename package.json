@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --no-progress",
     "lint": "ng lint",
     "build": "ng lint & ng build --prod",
     "test": "ng test",
@@ -47,7 +47,7 @@
     "zone.js": "git://github.com/JiaLiPassion/zone.js#jasmine-dist"
   },
   "devDependencies": {
-    "@angular/cli": "1.7.4",
+    "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "5.2.9",
     "@angular/language-service": "5.2.9",
     "@types/chai": "^4.1.2",
