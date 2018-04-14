@@ -11,13 +11,13 @@
     "test:once": "ng test --watch=false",
     "bundle-report": "ng build -prod --stats-json & webpack-bundle-analyzer build/stats.json -m static",
     "webdriver:clean": "webdriver-manager clean",
-    "webdriver:update": "webdriver-manager update --chrome --ie --gecko",
+    "webdriver:update": "webdriver-manager update --chrome",
     "webdriver:start": "webdriver-manager start --detach",
     "webdriver:stop": "webdriver-manager shutdown",
     "e2e": "protractor protractor.conf.js",
     "e2e:hub": "protractor protractor.hub.conf.js",
-    "ci": "yarn lint && ng e2e",
-    "test-with-coverage": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage"
+    "ci": "yarn lint && yarn test:ci",
+    "test:ci": "ng test --single-run --code-coverage --progress=false"
   },
   "private": true,
   "dependencies": {
