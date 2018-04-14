@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "coacher-a6023"
+    "dev": "coacher-a6023",
+    "prod": "coacher-prod"
   }
 }
