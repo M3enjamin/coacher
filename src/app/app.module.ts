@@ -8,11 +8,13 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
 
-import { AppContainer } from './app.container';
+import { AppComponent } from './app.component';
 import { CoreModule } from '@app/core/core.module';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [AppContainer],
+  declarations: [AppComponent, LoginComponent, LayoutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -24,6 +26,6 @@ import { CoreModule } from '@app/core/core.module';
     ActivityModule
   ],
   providers: [],
-  bootstrap: [AppContainer]
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
