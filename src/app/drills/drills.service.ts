@@ -2,12 +2,12 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import { Observable } from 'rxjs/Observable';
 import { Drill } from './../shared/model/drill';
 import { Injectable, Injector, NgZone } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class DrillsService {
   private drillCollection: AngularFirestoreCollection<Drill>;
-  private drills: Subject<Drill[]> = new Subject<Drill[]>();
+  private drills: BehaviorSubject<Drill[]> = new BehaviorSubject<Drill[]>([]);
 
   constructor(private injector: Injector, private ngZone: NgZone) {
     ngZone.runOutsideAngular(() => {
