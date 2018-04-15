@@ -1,8 +1,7 @@
-import {Action} from '@ngrx/store';
+import { Action } from "@ngrx/store";
 
 export class NgRxAction<T> implements Action {
-    readonly type: string;
+  readonly type: string;
 
-    constructor(public payload?: T) {
-    }
+  constructor(public payload?: T) {}
 }

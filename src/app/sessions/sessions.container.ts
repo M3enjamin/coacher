@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-sessions',
+  selector: "app-sessions",
   template: `Sessions...`
 })
 export class SessionsContainer implements OnInit {

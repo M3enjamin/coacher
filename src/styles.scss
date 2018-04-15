@@ -10,11 +10,15 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  background-color: #F7F7F7;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+  background-color: #f7f7f7;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-a, a:focus, a:visited, a:hover, a:active {
+a,
+a:focus,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
   color: #000;
 }

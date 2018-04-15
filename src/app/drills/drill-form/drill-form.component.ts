@@ -1,12 +1,18 @@
-import { Component, Output, OnInit, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormArray, FormControl, AbstractControl, Validators } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
-import { Drill, Aspect } from '@shared/model';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output
+} from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Drill } from "@shared/model";
 
 @Component({
-  selector: 'app-drill-form',
-  templateUrl: './drill-form.component.html',
-  styleUrls: ['./drill-form.component.scss'],
+  selector: "app-drill-form",
+  templateUrl: "./drill-form.component.html",
+  styleUrls: ["./drill-form.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DrillFormComponent implements OnInit {
@@ -21,8 +27,8 @@ export class DrillFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      description: ''
+      name: ["", Validators.required],
+      description: ""
     });
   }
 
