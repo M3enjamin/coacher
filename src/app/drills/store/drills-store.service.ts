@@ -1,16 +1,16 @@
-import { Drill } from "@shared/model";
-import { Injectable } from "@angular/core";
-import { createFeatureSelector, createSelector, Store } from "@ngrx/store";
-import * as state from "./drills.state";
-import * as drills from "./drills.actions";
+import { Drill } from '@shared/model';
+import { Injectable } from '@angular/core';
+import { createFeatureSelector, createSelector, Store } from '@ngrx/store';
+import * as state from './drills.state';
+import * as drills from './drills.actions';
 
-import { StoreService } from "@core/store/app-store.service";
-import { AppState } from "@core/store/app.reducer";
-import { Observable } from "rxjs/Observable";
+import { StoreService } from '@core/store/app-store.service';
+import { AppState } from '@core/store/app.reducer';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class DrillsStoreService extends StoreService {
-  private drillsState = createFeatureSelector<state.DrillsState>("drills");
+  private drillsState = createFeatureSelector<state.DrillsState>('drills');
 
   private drills = createSelector(this.drillsState, state.getDrills);
   private drill = createSelector(this.drillsState, state.getDrill);

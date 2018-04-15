@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Drill } from "@shared/model";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Drill } from '@shared/model';
 
 @Component({
-  selector: "app-drills-list",
-  templateUrl: "drills-list.component.html",
-  styleUrls: ["drills-list.component.scss"]
+  selector: 'app-drills-list',
+  templateUrl: 'drills-list.component.html',
+  styleUrls: ['drills-list.component.scss']
 })
 export class DrillsListComponent {
   @Input() drills: Drill[];

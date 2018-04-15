@@ -1,13 +1,13 @@
-import { LayoutStoreService } from "./../../core/store/layout/layout-store.service";
-import { DrillsStoreService } from "./../store/drills-store.service";
-import { Component } from "@angular/core";
-import { Drill } from "@app/shared/model";
+import { LayoutStoreService } from './../../core/store/layout/layout-store.service';
+import { DrillsStoreService } from './../store/drills-store.service';
+import { Component } from '@angular/core';
+import { Drill } from '@app/shared/model';
 
-import { Observable } from "rxjs/Observable";
-import { Router } from "@angular/router";
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-drills",
+  selector: 'app-drills',
   template: `
   <app-drill-form
     [formOpen]="showNewDrillForm | async"

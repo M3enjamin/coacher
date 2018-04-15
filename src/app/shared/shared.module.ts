@@ -1,5 +1,5 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
   MatCardModule,
@@ -7,8 +7,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule
-} from "@angular/material";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, FormsModule, ReactiveFormsModule],

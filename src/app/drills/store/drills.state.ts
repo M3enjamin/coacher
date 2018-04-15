@@ -1,4 +1,4 @@
-import { Drill } from "@shared/model";
+import { Drill } from '@shared/model';
 
 export interface DrillsState {
   list: Drill[];

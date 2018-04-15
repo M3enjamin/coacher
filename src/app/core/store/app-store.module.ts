@@ -1,15 +1,12 @@
-import { CustomRouterStateSerializer } from "./utils";
-import { NgModule } from "@angular/core";
-import { EffectsModule } from "@ngrx/effects";
-import {
-  RouterStateSerializer,
-  StoreRouterConnectingModule
-} from "@ngrx/router-store";
-import { StoreModule } from "@ngrx/store";
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { CustomRouterStateSerializer } from './utils';
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { environment } from "../../../environments/environment";
-import { metaReducers, reducers } from "./app.reducer";
+import { environment } from '../../../environments/environment';
+import { metaReducers, reducers } from './app.reducer';
 
 // import AppStoreModule in the AppModule after router module
 @NgModule({
