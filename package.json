@@ -54,7 +54,7 @@
   "devDependencies": {
     "@angular/cli": "1.6.8",
     "@angular/compiler-cli": "5.2.9",
-    "@angular/language-service": "5.2.9",
+    "@angular/language-service": "5.2.10",
     "@types/chai": "^4.1.2",
     "@types/chai-as-promised": "^7.1.0",
     "@types/cucumber": "^4.0.1",
