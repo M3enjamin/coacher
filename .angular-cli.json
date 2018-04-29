@@ -16,7 +16,7 @@
       "test": "../../../test.js",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "../../../tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "cchr",
       "styles": ["styles.scss", "../../../node_modules/mdi/scss/materialdesignicons.scss"],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
