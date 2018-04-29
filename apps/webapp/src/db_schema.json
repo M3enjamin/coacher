@@ -1,0 +1,49 @@
+{
+  "drills": {
+    "krisskrossshoot": {
+      "title": "Kriss-kross Shoot",
+      "description": "Kriss-kross + 1 layup and 2 shoots",
+      "aspects": {
+        "warmup": true,
+        "shoot": true
+      },
+      "nbPlayers": {
+        "from": 7,
+        "to": -1
+      }
+    }
+  },
+  "aspects": {
+    "dribble": {
+      "drills": {}
+    },
+    "shoot": {
+      "drills": {
+        "krisskrossshoot": true
+      }
+    },
+    "fast-break": {
+      "drills": {}
+    },
+    "warmup": {
+      "drills": {
+        "krisskrossshoot": true
+      }
+    },
+    "rebound": {
+      "drills": {}
+    }
+  },
+  "nbPlayers": {
+    "from": {
+      "7": {
+        "krisskrossshoot": true
+      }
+    },
+    "to": {
+      "-1": {
+        "krisskrossshoot": true
+      }
+    }
+  }
+}

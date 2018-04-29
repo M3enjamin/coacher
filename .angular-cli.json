@@ -1,33 +1,31 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
   "project": {
-    "name": "coacher"
+    "name": "coacher",
+    "npmScope": "webapp",
+    "latestMigration": "20180424-add-tsconfig-tools"
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "root": "apps\\webapp\\src",
+      "outDir": "dist\\apps\\webapp",
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
-      "test": "test.ts",
+      "test": "../../../test.js",
       "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "styles.scss",
-        "../node_modules/mdi/scss/materialdesignicons.scss"
-      ],
+      "styles": ["styles.scss", "../../../node_modules/mdi/scss/materialdesignicons.scss"],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "name": "webapp",
+      "tags": []
     }
   ],
   "e2e": {
@@ -37,15 +35,15 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
+      "project": "apps\\webapp\\src/tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/tsconfig.spec.json",
+      "project": "./tsconfig.spec.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "e2e/tsconfig.e2e.json",
+      "project": "apps\\webapp\\e2e\\tsconfig.e2e.json",
       "exclude": "**/node_modules/**"
     }
   ],
@@ -58,6 +56,11 @@
     "styleExt": "scss",
     "component": {
       "changeDetection": "OnPush"
+    },
+    "schematics": {
+      "collection": "@nrwl/schematics",
+      "postGenerate": "npm run format",
+      "newProject": ["app", "lib"]
     }
   }
 }
