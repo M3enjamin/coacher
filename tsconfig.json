@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -12,11 +11,12 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["app/*"],
-      "@core/*": ["app/core/*"],
-      "@shared/*": ["app/shared/*"],
-      "@env/*": ["environments/*"],
-      "@webapp/*": ["libs/*"]
+      "@coacher/*": ["libs/*"],
+      "@app/*": ["apps/webapp/src/app/*"],
+      "@core/*": ["apps/webapp/src/app/core/*"],
+      "@shared/*": ["apps/webapp/src/app/shared/*"],
+      "@env/*": ["apps/webapp/src/environments/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp"]
 }
