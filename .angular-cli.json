@@ -35,7 +35,7 @@
   },
   "lint": [
     {
-      "project": "apps\\webapp\\src/tsconfig.app.json",
+      "project": "apps/webapp/src/tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {
