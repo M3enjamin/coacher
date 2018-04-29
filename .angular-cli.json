@@ -7,8 +7,8 @@
   },
   "apps": [
     {
-      "root": "apps\\webapp\\src",
-      "outDir": "dist\\apps\\webapp",
+      "root": "apps/webapp/src",
+      "outDir": "dist/apps/webapp",
       "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
@@ -43,7 +43,7 @@
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "apps\\webapp\\e2e\\tsconfig.e2e.json",
+      "project": "apps/webapp/e2e/tsconfig.e2e.json",
       "exclude": "**/node_modules/**"
     }
   ],
