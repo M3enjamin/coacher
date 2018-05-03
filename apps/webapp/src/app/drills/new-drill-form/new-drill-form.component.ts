@@ -11,14 +11,14 @@ import { Drill } from '@shared/model';
 export class NewDrillFormComponent implements OnInit {
   @Input() formOpen: boolean;
 
-  @Output() createDrill = new EventEmitter<{drill:Drill,public:boolean}>();
+  @Output() createDrill = new EventEmitter<{ drill: Drill, public: boolean }>();
   @Output() cancelCreate = new EventEmitter<any>();
 
   public = true;
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -28,7 +28,7 @@ export class NewDrillFormComponent implements OnInit {
   }
 
   submit() {
-    this.createDrill.emit({drill:this.form.value,public: this.public});
+    this.createDrill.emit({ drill: this.form.value, public: this.public });
     this.form.reset();
   }
 
