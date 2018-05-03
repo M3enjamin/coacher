@@ -9,19 +9,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {
-    if (this.authService.isLoggedIn()) {
-      this.router.navigate(['sessions']);
-    }
+  constructor(private _authService: AuthService, private _router: Router) {
   }
 
   signInWithGoogle() {
-    this.authService
+    this._authService
       .signInWithGoogle()
       .then(res => {
-        this.router.navigate(['sessions']);
+        this._router.navigate(['/']);
       })
       .catch(err => console.log(err));
   }
-  ngOnInit() {}
+  ngOnInit() { }
 }
