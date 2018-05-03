@@ -6,7 +6,8 @@ import {
   MatCheckboxModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatSlideToggleModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatSlideToggleModule
   ],
   declarations: []
 })

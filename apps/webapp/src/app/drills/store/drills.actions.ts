@@ -27,7 +27,7 @@ export class LoadDrillsFailure extends NgRxAction<any> {
   readonly type = LOAD_DRILLS_FAILURE;
 }
 
-export class CreateDrill extends NgRxAction<Drill> {
+export class CreateDrill extends NgRxAction<{drill: Drill, public: boolean}> {
   readonly type = CREATE_DRILL;
 }
 

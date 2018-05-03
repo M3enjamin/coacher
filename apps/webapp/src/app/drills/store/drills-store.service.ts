@@ -27,7 +27,7 @@ export class DrillsStoreService extends StoreService {
     this.dispatchAction(new drills.OpenDrill(drillId));
   }
 
-  dispatchCreateDrillAction(drill: Drill) {
+  dispatchCreateDrillAction(drill: {drill: Drill, public: boolean}) {
     this.dispatchAction(new drills.CreateDrill(drill));
   }
 

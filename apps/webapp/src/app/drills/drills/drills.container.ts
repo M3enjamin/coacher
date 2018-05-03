@@ -7,12 +7,12 @@ import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-drills',
+  selector: 'coach-drills',
   template: `
-  <app-drill-form
+  <app-new-drill-form
     [formOpen]="showNewDrillForm | async"
     (createDrill)="createDrill($event)"
-    (cancelCreate)="cancelCreate()"></app-drill-form>
+    (cancelCreate)="cancelCreate()"></app-new-drill-form>
   <app-drills-list
     [drills]="drills | async"
     (removeDrill)="removeDrill($event)"></app-drills-list>
@@ -32,7 +32,7 @@ export class DrillsContainer {
     this.showNewDrillForm = this.layoutStoreService.getNewDrillFormState();
   }
 
-  createDrill(drill: Drill) {
+  createDrill(drill: {drill: Drill, public: boolean}) {
     this.drillStoreService.dispatchCreateDrillAction(drill);
   }
 

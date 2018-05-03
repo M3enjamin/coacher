@@ -3,16 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Drill } from '@shared/model';
 
 @Component({
-  selector: 'app-drill-form',
-  templateUrl: './drill-form.component.html',
-  styleUrls: ['./drill-form.component.scss'],
+  selector: 'app-new-drill-form',
+  templateUrl: './new-drill-form.component.html',
+  styleUrls: ['./new-drill-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DrillFormComponent implements OnInit {
+export class NewDrillFormComponent implements OnInit {
   @Input() formOpen: boolean;
 
-  @Output() createDrill = new EventEmitter<Drill>();
+  @Output() createDrill = new EventEmitter<{drill:Drill,public:boolean}>();
   @Output() cancelCreate = new EventEmitter<any>();
+
+  public = true;
 
   form: FormGroup;
 
@@ -26,7 +28,7 @@ export class DrillFormComponent implements OnInit {
   }
 
   submit() {
-    this.createDrill.emit(this.form.value);
+    this.createDrill.emit({drill:this.form.value,public: this.public});
     this.form.reset();
   }
 
