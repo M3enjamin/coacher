@@ -34,8 +34,8 @@ export class DrillsService {
     return this.drills;
   }
 
-  createDrill(drill: {drill: Drill, public: boolean}): Observable<any> {
-    if(drill.public) {
+  createDrill(drill: { drill: Drill, public: boolean }): Observable<any> {
+    if (drill.public) {
       return fromPromise(this.publicDrillsCollection.add(drill.drill));
     } else {
       return fromPromise(this.privateDrillsCollection.doc('').collection<Drill>('pubDrills').add(drill.drill));

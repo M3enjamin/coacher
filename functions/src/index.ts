@@ -9,13 +9,6 @@ import * as admin from 'firebase-admin';
 //  response.send("Hello from Firebase!");
 // });
 
-interface User {
-  uid: string,
-  displayName?: string,
-  email?: string,
-  photoURL?: string
-}
-
 export const createUserOnFirstConnection = functions.auth.user().onCreate((user) => {
   admin.initializeApp();
 

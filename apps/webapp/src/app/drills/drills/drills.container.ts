@@ -32,7 +32,7 @@ export class DrillsContainer {
     this.showNewDrillForm = this.layoutStoreService.getNewDrillFormState();
   }
 
-  createDrill(drill: {drill: Drill, public: boolean}) {
+  createDrill(drill: { drill: Drill, public: boolean }) {
     this.drillStoreService.dispatchCreateDrillAction(drill);
   }
 
