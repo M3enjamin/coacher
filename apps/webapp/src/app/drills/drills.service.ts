@@ -5,7 +5,6 @@ import { fromPromise } from 'rxjs/observable/fromPromise';
 import { Drill } from './../shared/model/drill';
 import { Injectable, Injector, NgZone } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { DocumentReference, Firestore } from '@google-cloud/firestore';
 import { User } from '@firebase/auth-types';
 
 @Injectable()
