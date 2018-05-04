@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sessions',
+  selector: 'cchr-sessions',
   template: `Sessions...`
 })
 export class SessionsContainer implements OnInit {

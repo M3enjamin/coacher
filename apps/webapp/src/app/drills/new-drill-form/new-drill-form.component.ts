@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Drill } from '@shared/model';
 
 @Component({
-  selector: 'app-new-drill-form',
+  selector: 'cchr-new-drill-form',
   templateUrl: './new-drill-form.component.html',
   styleUrls: ['./new-drill-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -11,14 +11,14 @@ import { Drill } from '@shared/model';
 export class NewDrillFormComponent implements OnInit {
   @Input() formOpen: boolean;
 
-  @Output() createDrill = new EventEmitter<{ drill: Drill, public: boolean }>();
+  @Output() createDrill = new EventEmitter<{ drill: Drill; public: boolean }>();
   @Output() cancelCreate = new EventEmitter<any>();
 
   public = true;
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.fb.group({

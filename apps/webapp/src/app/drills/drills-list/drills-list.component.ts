@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Drill } from '@shared/model';
 
 @Component({
-  selector: 'app-drills-list',
+  selector: 'cchr-drills-list',
   templateUrl: 'drills-list.component.html',
   styleUrls: ['drills-list.component.scss']
 })

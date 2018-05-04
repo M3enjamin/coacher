@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-activity',
+  selector: 'cchr-activity',
   template: `Activity...`
 })
 export class ActivityContainer implements OnInit {

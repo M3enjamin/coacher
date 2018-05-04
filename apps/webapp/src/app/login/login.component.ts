@@ -3,14 +3,13 @@ import { AuthService } from './../core/services/auth.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'cchr-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  constructor(private _authService: AuthService, private _router: Router) {
-  }
+  constructor(private _authService: AuthService, private _router: Router) {}
 
   signInWithGoogle() {
     this._authService
@@ -20,5 +19,5 @@ export class LoginComponent implements OnInit {
       })
       .catch(err => console.log(err));
   }
-  ngOnInit() { }
+  ngOnInit() {}
 }

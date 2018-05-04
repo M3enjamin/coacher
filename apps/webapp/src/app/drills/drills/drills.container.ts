@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'coach-drills',
+  selector: 'cchr-drills',
   template: `
   <app-new-drill-form
     [formOpen]="showNewDrillForm | async"
@@ -32,7 +32,7 @@ export class DrillsContainer {
     this.showNewDrillForm = this.layoutStoreService.getNewDrillFormState();
   }
 
-  createDrill(drill: { drill: Drill, public: boolean }) {
+  createDrill(drill: { drill: Drill; public: boolean }) {
     this.drillStoreService.dispatchCreateDrillAction(drill);
   }
 
