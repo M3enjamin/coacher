@@ -1,11 +1,10 @@
+import { User, Drill } from '@shared/model';
 import { map } from 'rxjs/operators/map';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { fromPromise } from 'rxjs/observable/fromPromise';
-import { Drill } from './../shared/model/drill';
 import { Injectable, Injector, NgZone } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { User } from '@firebase/auth-types';
 
 @Injectable()
 export class DrillsService {
@@ -34,11 +33,16 @@ export class DrillsService {
     return this.drills;
   }
 
-  createDrill(drill: { drill: Drill, public: boolean }): Observable<any> {
+  createDrill(drill: { drill: Drill; public: boolean }): Observable<any> {
     if (drill.public) {
       return fromPromise(this.publicDrillsCollection.add(drill.drill));
     } else {
-      return fromPromise(this.privateDrillsCollection.doc('').collection<Drill>('pubDrills').add(drill.drill));
+      return fromPromise(
+        this.privateDrillsCollection
+          .doc('')
+          .collection<Drill>('pubDrills')
+          .add(drill.drill)
+      );
     }
   }
 
