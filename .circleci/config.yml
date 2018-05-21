@@ -22,7 +22,7 @@ jobs:
       - save_cache:
           key: coacher-functions-{{ checksum "functions/package.json" }}
           paths:
-            - "functions/node_modules"
+            - "node_modules"
   test:
     <<: *setup
     steps:
