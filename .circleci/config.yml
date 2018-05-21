@@ -61,12 +61,13 @@ workflows:
   build-and-deploy:
     jobs:
       - checkout-and-install
-      - test:
-         requires:
-            - checkout-and-install
+      # - test:
+      #    requires:
+      #       - checkout-and-install
       - build:
           requires:
-            - test
-      - deploy-dev:
-          requires:
-            - build
+            - checkout-and-install
+            # - test
+      # - deploy-dev:
+      #     requires:
+      #       - build
