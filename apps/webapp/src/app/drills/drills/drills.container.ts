@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'cchr-drills',
   template: `
-  <app-new-drill-form
+  <cchr-new-drill-form
     [formOpen]="showNewDrillForm | async"
     (createDrill)="createDrill($event)"
-    (cancelCreate)="cancelCreate()"></app-new-drill-form>
-  <app-drills-list
+    (cancelCreate)="cancelCreate()"></cchr-new-drill-form>
+  <cchr-drills-list
     [drills]="drills | async"
-    (removeDrill)="removeDrill($event)"></app-drills-list>
+    (removeDrill)="removeDrill($event)"></cchr-drills-list>
   `
 })
 export class DrillsContainer {
