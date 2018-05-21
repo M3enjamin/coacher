@@ -16,7 +16,7 @@
     "webdriver:stop": "webdriver-manager shutdown",
     "e2e": "webdriver-manager update --chrome && protractor protractor.conf.js",
     "ci": "yarn lint && yarn test:ci",
-    "test:ci": "ng test --single-run --code-coverage --progress=false",
+    "test:ci": "ng test --single-run --verbose",
     "deploy:staging": "yarn build && firebase use dev && firebase deploy",
     "deploy:prod": "yarn build && firebase use prod && firebase deploy",
     "format:fix": "pretty-quick --staged",
