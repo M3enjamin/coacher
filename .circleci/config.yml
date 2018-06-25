@@ -12,11 +12,15 @@ jobs:
       - restore_cache:
           keys:
             - coacher-{{ .Branch }}-{{ checksum "package.json" }}
-            - coacher-{{ .Branch }}
-            - coacher-
+            - coacher-functions-{{ checksum "functions/package.json" }}
       - run: yarn install
       - save_cache:
           key: coacher-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+      - run: yarn install --cwd functions
+      - save_cache:
+          key: coacher-functions-{{ checksum "functions/package.json" }}
           paths:
             - "node_modules"
   test:
@@ -24,7 +28,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: coacher-{{ .Branch }}-{{ checksum "package.json" }}
+          keys:
+            - coacher-{{ .Branch }}-{{ checksum "package.json" }}
+            - coacher-functions-{{ checksum "functions/package.json" }}
       - run:
           name: Run tests
           command: yarn ci
@@ -33,7 +39,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: coacher-{{ .Branch }}-{{ checksum "package.json" }}
+          keys:
+            - coacher-{{ .Branch }}-{{ checksum "package.json" }}
+            - coacher-functions-{{ checksum "functions/package.json" }}
       - run:
           name: Production Build
           command: yarn build
@@ -42,7 +50,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: coacher-{{ .Branch }}-{{ checksum "package.json" }}
+          keys:
+            - coacher-{{ .Branch }}-{{ checksum "package.json" }}
+            - coacher-functions-{{ checksum "functions/package.json" }}
       - run:
           name: Deploy
           command: yarn deploy:staging
@@ -51,12 +61,13 @@ workflows:
   build-and-deploy:
     jobs:
       - checkout-and-install
-      - test:
-         requires:
-            - checkout-and-install
+      # - test:
+      #    requires:
+      #       - checkout-and-install
       - build:
           requires:
-            - test
-      - deploy-dev:
-          requires:
-            - build
+            - checkout-and-install
+            # - test
+      # - deploy-dev:
+      #     requires:
+      #       - build
