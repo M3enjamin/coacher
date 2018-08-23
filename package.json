@@ -81,7 +81,7 @@
     "codelyzer": "4.0.1",
     "cucumber": "4.0.0",
     "cucumber-html-report": "0.6.4",
-    "cucumber-html-reporter": "4.0.1",
+    "cucumber-html-reporter": "4.0.4",
     "cucumberjs-allure-reporter": "1.0.3",
     "firebase-tools": "3.18.5",
     "husky": "0.14.3",
