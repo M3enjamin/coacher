@@ -52,7 +52,7 @@
     "@ngrx/router-store": "6.0.0",
     "@ngrx/store": "6.0.0",
     "@ngrx/store-devtools": "6.0.0",
-    "@nrwl/nx": "6.0.0",
+    "@nrwl/nx": "6.2.1",
     "angularfire2": "5.0.0-rc.7",
     "core-js": "2.5.6",
     "firebase": "5.0.2",
